@@ -1,46 +1,30 @@
 import React from 'react';
-import { TextInput, StyleSheet, View } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 
-interface CustomInputProps {
-  placeholder: string;
-  value: string;
-  onChangeText: (text: string) => void;
-  secureTextEntry?: boolean;
-}
-
-const CustomInput: React.FC<CustomInputProps> = ({
-  placeholder,
-  value,
-  onChangeText,
-  secureTextEntry = false,
-}) => {
+const CustomInput = ({ value, onChangeText, placeholder, secureTextEntry }: any) => {
   return (
-    <View style={styles.container}>
-      <TextInput
-        placeholder={placeholder}
-        value={value}
-        onChangeText={onChangeText}
-        style={styles.input}
-        secureTextEntry={secureTextEntry}
-        placeholderTextColor="#888"
-      />
-    </View>
+    <TextInput
+      style={styles.input}
+      placeholder={placeholder}
+      placeholderTextColor="#8b949e"
+      textContentType="oneTimeCode"
+      value={value}
+      onChangeText={onChangeText}
+      secureTextEntry={secureTextEntry}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    marginVertical: 8,
-  },
   input: {
-    backgroundColor: '#1e1e1e',
-    color: '#fff',
-    borderWidth: 1,
-    borderColor: '#333',
-    borderRadius: 8,
+    width: '100%',
+    backgroundColor: '#161b22',
     padding: 12,
-    fontSize: 16,
+    borderRadius: 8,
+    color: 'white',
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: '#30363d',
   },
 });
 
